@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/saricwedding/static/css/main.a59cfad6.css",
+    "main.js": "/saricwedding/static/js/main.c6f20cc0.js",
+    "static/media/polaroid-overlay.png": "/saricwedding/static/media/polaroid-overlay.2adb947dfe167eed5753.png",
+    "index.html": "/saricwedding/index.html",
+    "main.a59cfad6.css.map": "/saricwedding/static/css/main.a59cfad6.css.map",
+    "main.c6f20cc0.js.map": "/saricwedding/static/js/main.c6f20cc0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a59cfad6.css",
+    "static/js/main.c6f20cc0.js"
+  ]
+}
