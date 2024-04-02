@@ -1,7 +1,10 @@
 import React from 'react';
 
-const Camera = () => (
+import { IconProps } from '../../components/utils';
+
+const Camera = (props: IconProps) => (
   <svg
+    className={props.className}
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -21,5 +24,9 @@ const Camera = () => (
     </g>
   </svg>
 );
+
+Camera.defaultProps = {
+  className: '',
+}
 
 export default Camera;

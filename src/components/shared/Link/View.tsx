@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import RenderIf from '../RenderIf';
 
 type LinkProps = {
@@ -16,23 +18,21 @@ const Link = (props: LinkProps) => {
     subText,
   } = props;
 
-  console.log(link);
-
   return (
-    <div className="flex flex-row gap-4 items-center p-4 border rounded border-gray-200">
+    <NavLink to={link} className="flex flex-row gap-4 items-center p-4 border rounded border-gray-200">
       {icon}
       <div className="flex flex-row items-center gap-2">
         <span className="text-lg">{text}</span>
-        <RenderIf condition={subText !== ''}>
+        <RenderIf condition={!!subText}>
           <span className="text-gray-500 text-sm">{`(${subText})`}</span>
         </RenderIf>
       </div>
-    </div>
+    </NavLink>
   )
 }
 
 Link.defaultProps = {
-  subText: '',
+  subText: undefined,
 }
 
 export default Link;

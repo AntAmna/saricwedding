@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Music = () => (
+import { IconProps } from '../../components/utils';
+
+const Music = (props: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
@@ -11,7 +13,7 @@ const Music = () => (
     y="0"
     viewBox="0 0 511.972 511.972"
     xmlSpace="preserve"
-    className=""
+    className={props.className}
   >
     <g>
       <path

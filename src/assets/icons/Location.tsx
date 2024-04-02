@@ -1,7 +1,10 @@
 import React from 'react';
 
-const Location = () => (
+import { IconProps } from '../../components/utils';
+
+const Location = (props: IconProps) => (
   <svg
+    className={props.className}
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -26,5 +29,9 @@ const Location = () => (
     </g>
   </svg>
 );
+
+Location.defaultProps = {
+  className: '',
+}
 
 export default Location;

@@ -1,0 +1,40 @@
+@use '../../styles/index';
+
+@layer components {
+  .landing-page {
+    //&__images {
+    //  .polaroid-image {
+    //    background-image: url("../../assets/images/polaroid-overlay.png");
+    //    background-size: contain;
+    //    background-repeat: no-repeat;
+    //  }
+    //
+    //  .image-bg {
+    //    &::before, &::after {
+    //      background-image: url("../../assets/images/amnaAmer.jpeg");
+    //      background-size: contain;
+    //      background-repeat: no-repeat;
+    //      background-position: center;
+    //    }
+    //
+    //    &::after {
+    //      right: calc(50% - 255px);
+    //    }
+    //
+    //    &::before {
+    //      left: calc(50% - 255px);
+    //    }
+    //  }
+    //
+    //  &::before, &::after {
+    //    background-image: url("../../assets/images/polaroid-overlay.png");
+    //    background-size: contain;
+    //    background-repeat: no-repeat;
+    //    background-position: center;
+    //  }
+    // }
+    background-image: url("../../assets/images/stone-texture-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

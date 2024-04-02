@@ -1,7 +1,10 @@
 import React from 'react';
 
-const Bouquet = () => (
+import { IconProps } from '../../components/utils';
+
+const Bouquet = (props: IconProps) => (
   <svg
+    className={props.className}
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -21,5 +24,9 @@ const Bouquet = () => (
     </g>
   </svg>
 );
+
+Bouquet.defaultProps = {
+  className: '',
+}
 
 export default Bouquet;

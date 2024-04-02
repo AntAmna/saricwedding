@@ -6,12 +6,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        playfairDisplay: ['Playfair Display', 'sans-serif'],
-        sacramento: ['Sacramento', 'serif'],
+        ebGaramond: ['Eb Garamond', 'serif'],
       },
       colors: {
         'viber-purple': '#7360f2',
-      }
+      },
     },
   },
   plugins: [],

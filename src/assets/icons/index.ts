@@ -23,3 +23,5 @@ export { default as Calendar } from './Calendar';
 export { default as Information } from './Information';
 export { default as Viber } from './Viber';
 export { default as Arrow } from './Arrow';
+export { default as WeddingBells } from './WeddingBells';
+export { default as Dinner } from './Dinner';
