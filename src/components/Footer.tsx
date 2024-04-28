@@ -1,10 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Text, Title, UnstyledButton } from '@mantine/core';
 
-const Footer = () => (
-  <div className="my-[52px] mx-auto w-fit">
-    <p className="m-0 text-center border-b text-[39px] leading-[39px] tracking-[8px] border-b-black px-[18px] pb-4">A & A</p>
-    <p className="m-0 text-center text-[15px] tracking-[3px] leading-[15px] font-ebGaramond pt-4">17.08.2024.</p>
-  </div>
-)
+const Footer = () => {
+  const navigate = useNavigate()
+
+  return (
+    <UnstyledButton my={52} mx="auto" w="fit-content" onClick={() => navigate('/saricwedding')}>
+      <Title m={0} ta="center" order={1} lts={8} style={{ borderBottom: 'solid 1px black' }} pb={16} px={18}>A & A</Title>
+      <Text m={0} ta="center" fz="md" lts={3} pt={16}>17.08.2024.</Text>
+    </UnstyledButton>
+  )
+}
 
 export default Footer;

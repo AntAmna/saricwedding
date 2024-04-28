@@ -4,32 +4,45 @@ import { createBrowserRouter } from 'react-router-dom';
 import LandingPage from '../LandingPage';
 import Protokol from '../Protokol';
 import Layout from '../Layout';
+import WeddingParty from '../WeddingParty';
+import FAQ from '../FAQ';
+import RSVP from '../RSVP';
 
-export const descriptionText = 'Našim prijateljima i obitelji: Tako smo uzbuđeni što možemo proslaviti naše vjenčanje s vama. Ovdje pronađite sve detalje koje trebate znati o našem velikom danu.';
+export const descriptionText = 'Dobrodošli na našu stranicu za vjenčanja! Sretni smo što možemo s vama podijeliti ovo uzbudljivo vrijeme i stvorili smo prostor koji dijeli sve što trebate znati o našem velikom danu.';
 
-export const instruction1 = 'Kliknite na sljedeći link, kako biste vidjeli protokol';
+export const hrefs = [
+  '/saricwedding',
+  '/saricwedding/protokol',
+  '/saricwedding/wedding-party',
+  '/saricwedding/qa',
+  '/saricwedding/rsvp',
+]
 
-export const instruction2 = 'Kliknite na jedan od sljedećih linkova, kako biste potvrdili svoj dolazak';
-
-export const instruction3 = 'Kliknite na sljedeći link, kako biste sačuvali datum u Vaš kalendar';
+export const routerHrefs = {
+  home: hrefs[0],
+  protocol: hrefs[1],
+  weddingParty: hrefs[2],
+  qa: hrefs[3],
+  rsvp: hrefs[4],
+}
 
 export const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { path: '/saricwedding', element: <LandingPage /> },
-      { path: '/saricwedding/protokol', element: <Protokol /> },
-      { path: '/saricwedding/wedding-party', element: <div /> },
-      { path: '/saricwedding/qa', element: <div /> },
-      { path: '/saricwedding/rsvp', element: <div /> },
+      { path: routerHrefs.home, element: <LandingPage /> },
+      { path: routerHrefs.protocol, element: <Protokol /> },
+      { path: routerHrefs.weddingParty, element: <WeddingParty /> },
+      { path: routerHrefs.qa, element: <FAQ /> },
+      { path: routerHrefs.rsvp, element: <RSVP /> },
     ],
   },
 ])
 
-export const headerItems = [
-  { key: 'home', label: 'Početna', onClick: () => router.navigate('/saricwedding') },
-  { key: 'protokol', label: 'Protokol', onClick: () => router.navigate('/saricwedding/protokol') },
-  { key: 'wedding-party', label: 'Svatovi', onClick: () => router.navigate('/saricwedding/wedding-party') },
-  { key: 'qa', label: 'Q + A', onClick: () => router.navigate('/saricwedding/qa') },
-  { key: 'rsvp', label: 'RSVP', onClick: () => router.navigate('/saricwedding/rsvp') },
-]
+export const titles: Record<string, string> = {
+  '/saricwedding': 'A & A',
+  '/saricwedding/protokol': 'Protokol',
+  '/saricwedding/wedding-party': 'Svatovi',
+  '/saricwedding/qa': 'Pitanja i odgovori',
+  '/saricwedding/rsvp': 'Potvrdite dolazak',
+}

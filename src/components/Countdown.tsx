@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import moment from 'moment';
+import { Text } from '@mantine/core';
 
 const Countdown = () => {
   const [days, setDays] = useState(0);
@@ -17,11 +18,9 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <div className="m-0 text-justify text-[15px] font-ebGaramond tracking-[3px] uppercase">
-        {days === 0 ? 'Dan D' : `Još ${days} dan${days === 1 ? '' : 'a'}!`}
-      </div>
-    </div>
+    <Text m={0} ta="center" fz="md" lts={3} tt="uppercase" className="m-0 text-justify text-[15px] font-ebGaramond tracking-[3px] uppercase">
+      {days === 0 ? 'Dan D' : `Još ${days} dan${days === 1 ? '' : 'a'}!`}
+    </Text>
   )
 };
 

@@ -1,20 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { Stack } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
 
 import Navigation from './Navigation';
 import Footer from './Footer';
+import Links from './Links';
 
 const Layout = () => {
-  const [openMenu, setOpenMenu] = useState(false)
-
-  const toggleOpenMenu = () => setOpenMenu(!openMenu)
+  const [opened, { toggle }] = useDisclosure();
 
   return (
-    <div className={`max-w-[500px] bg-white w-full ${openMenu ? 'h-screen overflow-y-hidden' : 'h-fit overflow-y-auto'}`}>
-      <Navigation openMenu={openMenu} toggleOpenMenu={toggleOpenMenu} />
-      <Outlet />
+    <Stack
+      w="100%"
+      gap={0}
+      mih="100vh"
+      h={opened ? '100vh' : 'fit-content'}
+      maw={500}
+      bg="white"
+      style={{ overflowY: opened ? 'hidden' : 'auto' }}
+    >
+      <Navigation openMenu={opened} toggleOpenMenu={toggle} />
+      <Stack w="100%" gap={32}>
+        <Outlet />
+        <Links />
+      </Stack>
       <Footer />
-    </div>
+    </Stack>
   )
 }
 

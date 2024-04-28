@@ -1,51 +1,52 @@
 import React from 'react';
-import { RiCloseLine, RiMenuLine } from 'react-icons/ri';
 import { useLocation } from 'react-router-dom';
-import { Layout, Button, Menu } from 'antd';
+import {
+  Box,
+  Burger,
+  Group,
+  Stack,
+  Title,
+  NavLink, Transition,
+} from '@mantine/core';
 
-import { headerItems } from './utils';
-
-const { Header } = Layout;
+import { titles, hrefs } from './utils';
 
 type Props = {
   toggleOpenMenu: () => void,
   openMenu: boolean,
 }
 
-const titles: Record<string, string> = {
-  '/saricwedding': 'A & A',
-  '/saricwedding/protokol': 'Protokol',
-  '/saricwedding/wedding-party': 'Svatovi',
-  '/saricwedding/qa': 'Q + A',
-  '/saricwedding/rsvp': 'RSVP',
-}
-
 const Navigation = ({ toggleOpenMenu, openMenu }: Props) => {
   const location = useLocation();
 
-  const items = headerItems.map((item) => ({
-    ...item,
-    onClick: () => {
-      toggleOpenMenu();
-      item.onClick();
-    },
-  }))
-
   return (
-    <Header className="w-full py-4 px-6 relative">
-      <div className="flex items-center justify-between">
-        <Button className="relative text-[30px] z-[100]" onClick={toggleOpenMenu}>
-          {openMenu ? <RiCloseLine /> : <RiMenuLine />}
-        </Button>
-        {openMenu && (
-          <div className="absolute top-0 left-0 w-full h-screen z-50 bg-white flex flex-col items-center justify-center">
-            <Menu className="font-ebGaramond p-6 flex flex-col items-center justify-center gap-4 text-[14px] tracking-[1px] leading-[21px]" items={items} />
-          </div>
+    <Group w="100%" py={16} gap={8} px={24} justify="space-between" pos="relative">
+      <Burger opened={openMenu} onClick={toggleOpenMenu} />
+      <Transition
+        mounted={openMenu}
+        transition="scale-y"
+        duration={500}
+        timingFunction="ease"
+      >
+        {(styles) => (
+          <Stack style={styles} pos="absolute" top={65} p={16} left={0} w="100%" h="calc(100vh - 65px)" bg="white" align="center">
+            {hrefs.map((href) => (
+              <NavLink
+                style={{
+                  borderBottom: location.pathname === href ? 'solid 2px black' : undefined,
+                }}
+                w="fit-content"
+                href={href}
+                key={href}
+                label={titles[href]}
+              />
+            ))}
+          </Stack>
         )}
-        <span className="m-0 text-xl text-center tracking[-1.5px] leading-[40px]">{titles[location.pathname]}</span>
-        <div className="w-[30px]" />
-      </div>
-    </Header>
+      </Transition>
+      <Title order={2} m={0} lts={4} fw={400}>{titles[location.pathname]}</Title>
+      <Box w={30} />
+    </Group>
   )
 }
 

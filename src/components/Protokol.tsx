@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { Stack, Text, Title } from '@mantine/core';
 
 import {
   Bouquet,
@@ -19,11 +20,11 @@ type Props = {
 }
 
 const ProtokolItem = ({ icon: Icon, time, label }: Props) => (
-  <div className="flex flex-col items-center gap-2">
+  <Stack gap={8} align="center">
     <Icon className="w-8 h-8" />
-    <span className="text-[24px] px-[18px] tracking-[4px] leading-[24px]">{time}</span>
-    <span className="m-0 text-center font-ebGaramond text-[15px] tracking-[1px] leading-[15px]">{label}</span>
-  </div>
+    <Title order={2} px={18} lts={4}>{time}</Title>
+    <Text fz="md" lts={1} ta="center" m={0}>{label}</Text>
+  </Stack>
 )
 
 const protokolItems: Props[] = [
@@ -39,12 +40,12 @@ const protokolItems: Props[] = [
 const Protokol = () => (
   <>
     <Description />
-    <div className="flex flex-col w-full gap-8 items-center pt-[56px]">
+    <Stack gap={32} align="center" pt={56} pb={56}>
       {protokolItems.map((item) => (
         // eslint-disable-next-line react/jsx-props-no-spreading
         <ProtokolItem {...item} />
       ))}
-    </div>
+    </Stack>
   </>
 )
 

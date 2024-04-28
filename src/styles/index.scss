@@ -10,7 +10,6 @@
 
 body {
   margin: 0;
-  font-family: 'Arya', serif!important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,4 +17,27 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.ant-menu-item-active {
+  border-bottom: solid 1px black;
+  padding: 0 4px 4px;
+}
+
+.ant-collapse {
+  &-item {
+   border: solid 1px lightslategray;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+  }
+
+  &-content {
+    border-top: solid 1px lightslategray;
+    padding: 16px;
+  }
 }
