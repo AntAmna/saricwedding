@@ -1,0 +1,31 @@
+@use './mixins';
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import 'tailwindcss/variants';
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+@layer base {
+  @include mixins.font-face('../assets/fonts/PlayfairDisplay/static/PlayfairDisplay-Regular.ttf', 400);
+  @include mixins.font-face('../assets/fonts/PlayfairDisplay/static/PlayfairDisplay-Medium.ttf', 500);
+  @include mixins.font-face('../assets/fonts/PlayfairDisplay/static/PlayfairDisplay-SemiBold.ttf', 600);
+  @include mixins.font-face('../assets/fonts/PlayfairDisplay/static/PlayfairDisplay-Bold.ttf', 700);
+  @include mixins.font-face('../assets/fonts/PlayfairDisplay/static/PlayfairDisplay-ExtraBold.ttf', 800);
+  @include mixins.font-face('../assets/fonts/PlayfairDisplay/static/PlayfairDisplay-Black.ttf', 900);
+  @include mixins.font-face('../assets/fonts/Sacramento/Sacramento-Regular.ttf', 400, 'Sacramento');
+}
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif!important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
