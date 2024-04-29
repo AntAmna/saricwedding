@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/saricwedding/static/css/main.681f4af3.css",
+    "main.js": "/saricwedding/static/js/main.2d93e5dd.js",
+    "static/media/amnaAmer2.jpeg": "/saricwedding/static/media/amnaAmer2.22661d5bc307d84017ad.jpeg",
+    "static/media/amnaAmer.jpeg": "/saricwedding/static/media/amnaAmer.18c5e3678fcc72c1c143.jpeg",
+    "static/media/polaroid-overlay.png": "/saricwedding/static/media/polaroid-overlay.2adb947dfe167eed5753.png",
+    "index.html": "/saricwedding/index.html",
+    "main.681f4af3.css.map": "/saricwedding/static/css/main.681f4af3.css.map",
+    "main.2d93e5dd.js.map": "/saricwedding/static/js/main.2d93e5dd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.681f4af3.css",
+    "static/js/main.2d93e5dd.js"
+  ]
+}
