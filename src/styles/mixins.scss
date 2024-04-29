@@ -1,7 +1,0 @@
-@mixin font-face($src, $font-weight, $font-family: 'Playfair Display') {
-  @font-face {
-    src: $src;
-    font-weight: $font-weight;
-    font-family: $font-family, serif;
-  }
-}
